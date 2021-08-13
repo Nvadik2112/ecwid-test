@@ -1,52 +1,22 @@
 <template>
-  <header>
-    <Header />
-  </header>
+  <main>
+    <Gallery />
+    <Advantages />
+  </main>
 </template>
 
 <script>
-import Header from "~/components/header";
 
+
+import Gallery from "@/components/containers/gallery";
+import Advantages from "@/components/containers/advantages";
 export default {
-  components: {Header}
+  components: {Advantages, Gallery}
 }
 </script>
 <style lang="sass">
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap')
-*
-  padding: 0
-  margin: 0
-body
-  box-sizing: border-box!important
-  background-color: white
-header
+main
   display: flex
-  justify-content: center
-.logo-main
-  width: 91px
-  height: 70px
-.icon
-  width: 30px
-  height: 30px
-.contact
-  display: flex
+  flex-direction: column
   align-items: center
-  & div
-    margin-left: 17px
-    height: 30px
-    display: flex
-    flex-direction: column
-    justify-content: center
-    & p
-      min-width: 102px
-      display: flex
-      justify-content: space-between
-      font:
-        family: 'Open Sans', sans-serif
-        style: normal
-        size: 13px
-      line-height: 18px
-      color: #535353
-.menu-button
-  cursor: pointer
 </style>
