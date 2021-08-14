@@ -13,6 +13,66 @@ body
 .icon
   width: 30px
   height: 30px
-
-
+.menu
+  &__overflow
+    background-color: rgba(0,0,0,0.4)
+    position: absolute
+    width: 100%
+    height: 100%
+  &__button
+    display: none
+  &_desktop
+    width: 100%
+    background-color: #497952
+    height: 40px
+    display: flex
+    align-items: center
+    justify-content: center
+  &_mobile
+    position: fixed
+    height: 100vh
+    width: 100vw
+    z-index: 2
+  &__frame
+    & a
+      text-decoration: none
+      font:
+        weight: 700
+        size: 14px
+      line-height: 19px
+      color: #FAFFFA
+      -webkit-transition: color 0.2s ease-out
+      -moz-transition: color 0.2s ease-out
+      -o-transition: color 0.2s ease-out
+      transition: color 0.2s ease-out
+      &:hover
+        color: #ccff00
+    &_desktop
+      max-width: 795px
+      width: 100%
+      display: flex
+      justify-content: space-between
+    &_mobile
+      position: absolute
+      z-index: 2
+      background-color: #497952
+      height: 100%
+      display: flex
+      flex-direction: column
+      padding: 15px
+      & a
+        margin: 10px 0
+@media (max-width: 900px)
+  .menu__frame
+    &_desktop
+      display: none
+  .menu
+    &_desktop
+      width: 100%
+      padding-left: 20px
+      display: flex
+      justify-content: flex-start
+    &__button
+      display: block
+      cursor: pointer
 

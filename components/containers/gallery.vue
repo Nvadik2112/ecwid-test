@@ -36,28 +36,15 @@ name: "gallery",
       this.gallery[this.key].isActiveDot = true
     },
     switchNextSlide() {
-      if (this.key < this.gallery.length-1) {
-        this.gallery[this.key].isActiveDot = false
-        this.key = ++this.key
-        this.gallery[this.key].isActiveDot = true
-      }
-      else {
-        this.gallery[this.key].isActiveDot = false
-        this.key = 0
-        this.gallery[this.key].isActiveDot = true
-      }
+      this.gallery[this.key].isActiveDot = false
+      this.key < this.gallery.length-1 ? this.key = ++this.key : this.key = 0
+      this.gallery[this.key].isActiveDot = true
+
     },
     switchPrevSlide() {
-      if (this.key > 0) {
-        this.gallery[this.key].isActiveDot = false
-        this.key = --this.key
-        this.gallery[this.key].isActiveDot = true
-      }
-      else {
-        this.gallery[this.key].isActiveDot = false
-        this.key = this.gallery.length - 1
-        this.gallery[this.key].isActiveDot = true
-      }
+      this.gallery[this.key].isActiveDot = false
+      this.key > 0 ? this.key = --this.key : this.gallery[this.key].isActiveDot = true
+      this.gallery[this.key].isActiveDot = true
     }
   },
   mounted() {

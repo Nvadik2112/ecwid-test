@@ -13,7 +13,10 @@
       </div>
     </div>
     <div class="video">
-      <img src="/info_logo/video_icon.svg" alt="иконка">
+      <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1.5" y="1.5" width="57" height="57" rx="28.5" stroke="#497952" stroke-width="3"/>
+        <path d="M47.0003 30L21.5006 44.7229L21.5 15.2781L47.0003 30Z" fill="#497952"/>
+      </svg>
     </div>
   </section>
 </template>
@@ -27,6 +30,7 @@ export default {
 <style lang="sass" scoped>
 .intro
   margin-top: 4px
+  margin-bottom: 81px
   height: 213px
   width: 100%
   max-width: 976px
@@ -66,7 +70,12 @@ export default {
   display: flex
   align-items: center
   justify-content: center
-  & img
+  & svg
     cursor: pointer
-
+    &:hover
+      fill: #535353
+      & rect
+        stroke: #ccff00
+      & path
+        fill: #ccff00
 </style>

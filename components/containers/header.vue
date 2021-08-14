@@ -1,11 +1,13 @@
 <template>
   <header>
+
     <div class="header-top">
       <div class="header-top__frame">
         <div class="logo">
           <img src="/header_logo/logo_header.svg" alt="Логотип">
         </div>
        <div class="contacts">
+         <div>
           <div v-for="item in contacts" class="contacts__item">
             <img :src="item.icon" :alt="item.alt">
             <div :id="item.id" v-if="item.upperText && item.downText">
@@ -13,26 +15,30 @@
               <p v-html="item.downText"></p>
             </div>
           </div>
+          </div>
         </div>
         <div id="icon-basket">
           <img src="/header_logo/icon-basket.svg" alt="корзина">
         </div>
       </div>
     </div>
-    <div class="menu">
-      <div class="menu__frame">
+    <div class="menu menu_desktop">
+      <div class="menu__frame menu__frame_desktop">
           <a v-for="item in menu" :href="item.url">
             {{item.text}}
           </a>
       </div>
-
+      <div class="menu__button">
+        <img @click="showMobileMenu" style="width: 30px; height: 30px; padding-top: 12px" src="/header_logo/burger_menu.svg" alt="">
+      </div>
     </div>
   </header>
 </template>
-
 <script>
+import MobileMenu from "@/components/containers/MobileMenu";
 export default {
   name: "header.vue",
+  components: {MobileMenu},
   data() {
     return {
       contacts: [
@@ -49,6 +55,12 @@ export default {
         {text: 'МК и описания', url: '/'},
         {text: 'Модели', url: '/'}
       ]
+    }
+  },
+  methods: {
+    showMobileMenu() {
+      this.$store.dispatch('data/setMobileMenu', true)
+      this.$store.dispatch('data/setList', this.menu)
     }
   }
 }
@@ -74,11 +86,12 @@ header
       justify-content: space-between
       align-items: center
 .contacts
-  display: flex
   width: 100%
-  justify-content: space-between
   margin-left: 103px
   margin-right: 118px
+  & div
+    display: flex
+    justify-content: space-between
   &__item
     display: flex
     align-items: center
@@ -99,30 +112,26 @@ header
         color: #535353
 #icon-basket
   cursor: pointer
-.menu
-  width: 100%
-  background-color: #497952
-  height: 40px
-  display: flex
-  align-items: center
-  justify-content: center
-  &__frame
-    max-width: 795px
-    width: 100%
-    display: flex
-    justify-content: space-between
-    & a
-      text-decoration: none
-      font:
-        weight: 700
-        size: 14px
-      line-height: 19px
-      color: #FAFFFA
-      -webkit-transition: color 0.2s ease-out
-      -moz-transition: color 0.2s ease-out
-      -o-transition: color 0.2s ease-out
-      transition: color 0.2s ease-out
-      &:hover
-        color: #ccff00
 </style>
+<style lang="sass" scoped>
+@media (max-width: 1100px)
+  .logo
+    padding-left: 15px
+@media (max-width: 900px)
+  .contacts
+    overflow-x: scroll
+    margin-left: 30px
+    margin-right: 30px
+    scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.1)
+    scrollbar-width: thin
+    &::-webkit-scrollbar
+      height: 4px
+    &::-webkit-scrollbar-track
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3)
+    &::-webkit-scrollbar-thumb
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.8)
+    &>div
+      width: 600px
+      margin: 10px
 
+</style>

@@ -48,5 +48,4 @@ export default {
     &_down
       bottom: 10.5px
       transform: rotate(+129.81deg)
-
 </style>
