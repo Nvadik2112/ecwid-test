@@ -2,6 +2,7 @@
   <main>
     <Gallery />
     <Advantages />
+    <Info />
   </main>
 </template>
 
@@ -10,8 +11,9 @@
 
 import Gallery from "@/components/containers/gallery";
 import Advantages from "@/components/containers/advantages";
+import Info from "~/components/containers/intro";
 export default {
-  components: {Advantages, Gallery}
+  components: {Advantages, Gallery, Info}
 }
 </script>
 <style lang="sass">

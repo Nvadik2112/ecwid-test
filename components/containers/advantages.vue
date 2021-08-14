@@ -1,7 +1,7 @@
 <template>
   <section class="advantages">
-    <div v-for="item in list" class="advantages__item" :class="'advantages__item_'+item.modificator">
-      <img :src="item.url" alt="овца">
+    <div v-for="item in list" class="advantages__item">
+      <img :src="item.url" :alt="item.alt">
       <div>
         <p v-html="item.text"></p>
       </div>
@@ -15,7 +15,11 @@ name: "advantages",
   data() {
     return {
       list: [
-        {url: '/advantages_logo/sheep_icon.svg', modificator: 'sheep', text: 'Только<br>натуральный состав'},
+        {url: '/advantages_logo/sheep_icon.svg', alt: 'sheep', text: 'Только<br>натуральный состав'},
+        {url: '/advantages_logo/avi_icon.svg', alt: 'avi', text: 'Актуальное<br>наличие на сайте'},
+        {url: '/advantages_logo/delivery_icon.svg', alt: 'delivery', text: 'Быстрая<br>отправка'},
+        {url: '/advantages_logo/location_icon.svg', alt: 'location', text: 'Удобное<br>расположение'},
+        {url: '/advantages_logo/support_icon.svg', alt: 'support', text: 'Помощь<br>в подборе товаров'}
       ]
     }
   }
@@ -27,24 +31,21 @@ name: "advantages",
   max-width: 982px
   width: 100%
   height: 154px
-  margin: 70px 0
+  margin: 70px -36px 70px -39px
   display: flex
-  justify-content: space-between
   align-items: center
+  justify-content: space-between
   &__item
     display: flex
     flex-direction: column
     justify-content: space-between
+    align-items: center
     height: 145px
     & div
-      display: flex
-      flex-wrap: wrap
-      justify-content: center
       & p
         font-size: 14px
         line-height: 19px
         color: #497952
         text-align: center
-    &_sheep
-      width: 210px
+
 </style>
