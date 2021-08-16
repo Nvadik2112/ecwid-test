@@ -24,13 +24,9 @@ export default {
     showMobileMenu() {
       this.$store.dispatch('data/setMobileMenu', false)
     },
-
   }
 }
 </script>
 
 <style lang="sass" scoped>
-
-
-
 </style>

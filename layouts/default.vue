@@ -1,6 +1,6 @@
 <template>
   <div>
-    <mobile-menu />
+    <MobileMenu />
     <Header />
     <Nuxt />
   </div>
@@ -8,7 +8,7 @@
 
 <script>
 import Header from "@/components/containers/header";
-import MobileMenu from "@/components/containers/MobileMenu";
+import MobileMenu from "@/components/containers/mobileMenu";
 export default {
   components: {Header, MobileMenu},
   name: "default"

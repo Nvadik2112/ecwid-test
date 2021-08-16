@@ -43,7 +43,7 @@ name: "gallery",
     },
     switchPrevSlide() {
       this.gallery[this.key].isActiveDot = false
-      this.key > 0 ? this.key = --this.key : this.gallery[this.key].isActiveDot = true
+      this.key > 0 ? this.key = --this.key : this.key = this.gallery.length-1
       this.gallery[this.key].isActiveDot = true
     }
   },
@@ -57,10 +57,6 @@ name: "gallery",
   background-size: cover
   background-position: center center
   background-repeat: no-repeat
-  -webkit-transition: background-image 0.5s linear
-  -moz-transition: background-image 0.5s linear
-  -o-transition: background-image 0.5s linear
-  transition: background-image 0.5s linear
   position: relative
   max-width: 1100px
   width: 100%
@@ -97,4 +93,16 @@ name: "gallery",
       cursor: pointer
       &_active
         background: #497952
+</style>
+<style lang="sass" scoped>
+@media (max-width: 1100px)
+  .slider
+    margin-left: 0
+    margin-right: 0
+@media (max-width: 600px)
+  .slider
+    height: 300px
+@media (max-width: 400px)
+  .slider
+    height: 250px
 </style>

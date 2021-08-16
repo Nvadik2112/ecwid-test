@@ -1,5 +1,5 @@
 <template>
-  <div class="slider-arrow" @click="click">
+  <div class="slider-arrow" @click.stop="click">
       <div class="slider-arrow__part slider-arrow__part_up">
       </div>
       <div class="slider-arrow__part slider-arrow__part_down">

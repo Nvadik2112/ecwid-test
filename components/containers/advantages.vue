@@ -1,9 +1,11 @@
 <template>
   <section class="advantages">
-    <div v-for="item in list" class="advantages__item">
-      <img :src="item.url" :alt="item.alt">
-      <div>
-        <p v-html="item.text"></p>
+    <div>
+      <div v-for="item in list" class="advantages__item">
+        <img :src="item.url" :alt="item.alt">
+        <div>
+          <p v-html="item.text"></p>
+        </div>
       </div>
     </div>
   </section>
@@ -11,7 +13,7 @@
 
 <script>
 export default {
-name: "advantages",
+  name: "advantages",
   data() {
     return {
       list: [
@@ -32,9 +34,10 @@ name: "advantages",
   width: 100%
   height: 154px
   margin: 70px -36px 70px -39px
-  display: flex
-  align-items: center
-  justify-content: space-between
+  & div
+    display: flex
+    align-items: center
+    justify-content: space-between
   &__item
     display: flex
     flex-direction: column
@@ -48,4 +51,23 @@ name: "advantages",
         color: #497952
         text-align: center
 
+</style>
+<style lang="sass" scoped>
+@media (max-width: 900px)
+  .advantages
+    margin-left: 0
+    margin-right: 0
+    overflow-x: scroll
+    scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.1)
+    scrollbar-width: thin
+    &::-webkit-scrollbar
+      height: 4px
+    &::-webkit-scrollbar-track
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3)
+    &::-webkit-scrollbar-thumb
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.8)
+    &>div
+      width: 900px
+      padding-left: 15px
+      padding-right: 15px
 </style>

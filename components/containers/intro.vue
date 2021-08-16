@@ -70,6 +70,7 @@ export default {
   display: flex
   align-items: center
   justify-content: center
+  margin-top: 2px
   & svg
     cursor: pointer
     &:hover
@@ -78,4 +79,24 @@ export default {
         stroke: #ccff00
       & path
         fill: #ccff00
+</style>
+<style lang="sass" scoped>
+@media (max-width: 900px)
+  .intro
+    width: 95%
+    flex-direction: column
+    align-items: center
+    margin-left: auto
+    margin-right: auto
+    height: inherit
+  .about
+    width: 100%
+    max-width: 538px
+    margin-bottom: 30px
+    & p
+      height: inherit
+  .video
+    height: 213px
+    width: 100%
+    max-width: 350px
 </style>

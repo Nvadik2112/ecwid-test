@@ -1,6 +1,5 @@
 <template>
   <header>
-
     <div class="header-top">
       <div class="header-top__frame">
         <div class="logo">
@@ -35,10 +34,8 @@
   </header>
 </template>
 <script>
-import MobileMenu from "@/components/containers/MobileMenu";
 export default {
   name: "header.vue",
-  components: {MobileMenu},
   data() {
     return {
       contacts: [
@@ -89,6 +86,7 @@ header
   width: 100%
   margin-left: 103px
   margin-right: 118px
+  z-index: 1
   & div
     display: flex
     justify-content: space-between
@@ -116,12 +114,19 @@ header
 <style lang="sass" scoped>
 @media (max-width: 1100px)
   .logo
-    padding-left: 15px
+    margin-left: 10px
+  .header
+    &-top
+      width: 100%
+      &__frame
+        margin-right: 0
+  #icon-basket
+    margin-right: 5px
 @media (max-width: 900px)
   .contacts
     overflow-x: scroll
-    margin-left: 30px
-    margin-right: 30px
+    margin-left: 25px
+    margin-right: 25px
     scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.1)
     scrollbar-width: thin
     &::-webkit-scrollbar
@@ -131,7 +136,6 @@ header
     &::-webkit-scrollbar-thumb
       -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.8)
     &>div
-      width: 600px
-      margin: 10px
-
+      width: 700px
+      margin: 20px 10px 10px 10px
 </style>
